@@ -36,3 +36,21 @@ add_executable(ground_finder src/octomap_ground_extraction.cpp)
 target_link_libraries(ground_finder
   ${catkin_LIBRARIES}
 )
+
+#############
+## Install ##
+#############
+
+# Install all the launch files
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+
+
+# Mark executables and/or libraries for installation
+install(TARGETS 
+  ground_finder
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
